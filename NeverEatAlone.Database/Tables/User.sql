@@ -8,7 +8,7 @@
     [IdPhoto] NVARCHAR(50) NULL, 
     [CreatedAt] DATE NULL, 
     [UpdatedAt] DATE NULL, 
-    [IsActive] BIT NULL DEFAULT 0, 
+    [IsActive] BIT NULL DEFAULT 1, 
     CONSTRAINT [PK_User] PRIMARY KEY ([UserId]),
     CONSTRAINT [UK_User_Email] UNIQUE ([Email])
 )

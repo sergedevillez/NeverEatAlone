@@ -10,4 +10,14 @@ Modèle de script de post-déploiement
 --------------------------------------------------------------------------------------
 */
 
+USE [NeverEatAlone.Database]
+GO
 
+EXEC [dbo].[RegisterUser]
+	@FirstName = N'string',
+	@LastName = N'string',
+	@Email = N'string',
+	@Password = N'string',
+	@IdPhoto = N'string/string'
+
+GO

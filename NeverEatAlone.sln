@@ -5,13 +5,27 @@ VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "NeverEatAlone.Database", "NeverEatAlone.Database\NeverEatAlone.Database.sqlproj", "{8E43DA3D-3E98-402F-8D17-F89BFC6A578C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeverEatAlone.Api", "NeverEatAlone.Api\NeverEatAlone.Api.csproj", "{1B51D2C4-41B8-4F59-ABE5-F3672D3241B1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NeverEatAlone.Api", "NeverEatAlone.Api\NeverEatAlone.Api.csproj", "{1B51D2C4-41B8-4F59-ABE5-F3672D3241B1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{42CAFECF-9924-4F58-B93E-AC73AEE65DED}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Models", "Models", "{677523EF-C84A-4F68-A8CB-53A08C19E4BC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tools.Connection", "Tools.Connection\Tools.Connection.csproj", "{5136255C-D0B4-41BE-BA9F-C13F0FCE12C4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tools.Connection", "Tools.Connection\Tools.Connection.csproj", "{5136255C-D0B4-41BE-BA9F-C13F0FCE12C4}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Models", "Models", "{B3B8E3B7-956A-40E6-B240-15B69F9084AF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{C9B08787-9B2A-4AC7-A491-398A0D3EFF5E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{9E23AA9D-553E-41DA-9ED1-BA322701502C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Global", "Global", "{2B901AF9-0038-41BB-8B7C-F64C8A1C3636}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeverEatAlone.Models.Client", "NeverEatAlone.Models.Client\NeverEatAlone.Models.Client.csproj", "{8B93E72D-3AE9-4148-AF10-3A37056F98B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeverEatAlone.Models.Common.Interfaces", "NeverEatAlone.Models.Common.Interfaces\NeverEatAlone.Models.Common.Interfaces.csproj", "{3F12CB3C-BE87-40B9-994E-A86964993936}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeverEatAlone.Models.Global.Entities", "NeverEatAlone.Models.Global.Entities\NeverEatAlone.Models.Global.Entities.csproj", "{801ACB48-9B5A-40AC-9C99-7B98EADC4271}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeverEatAlone.Models.Global.Repositories", "NeverEatAlone.Models.Global.Repositories\NeverEatAlone.Models.Global.Repositories.csproj", "{79D929A7-FEC8-4F6D-9F9E-E89FB14C945B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,12 +47,35 @@ Global
 		{5136255C-D0B4-41BE-BA9F-C13F0FCE12C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5136255C-D0B4-41BE-BA9F-C13F0FCE12C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5136255C-D0B4-41BE-BA9F-C13F0FCE12C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B93E72D-3AE9-4148-AF10-3A37056F98B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B93E72D-3AE9-4148-AF10-3A37056F98B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B93E72D-3AE9-4148-AF10-3A37056F98B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B93E72D-3AE9-4148-AF10-3A37056F98B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F12CB3C-BE87-40B9-994E-A86964993936}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F12CB3C-BE87-40B9-994E-A86964993936}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F12CB3C-BE87-40B9-994E-A86964993936}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F12CB3C-BE87-40B9-994E-A86964993936}.Release|Any CPU.Build.0 = Release|Any CPU
+		{801ACB48-9B5A-40AC-9C99-7B98EADC4271}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{801ACB48-9B5A-40AC-9C99-7B98EADC4271}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{801ACB48-9B5A-40AC-9C99-7B98EADC4271}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{801ACB48-9B5A-40AC-9C99-7B98EADC4271}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79D929A7-FEC8-4F6D-9F9E-E89FB14C945B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79D929A7-FEC8-4F6D-9F9E-E89FB14C945B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79D929A7-FEC8-4F6D-9F9E-E89FB14C945B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79D929A7-FEC8-4F6D-9F9E-E89FB14C945B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{5136255C-D0B4-41BE-BA9F-C13F0FCE12C4} = {42CAFECF-9924-4F58-B93E-AC73AEE65DED}
+		{C9B08787-9B2A-4AC7-A491-398A0D3EFF5E} = {B3B8E3B7-956A-40E6-B240-15B69F9084AF}
+		{9E23AA9D-553E-41DA-9ED1-BA322701502C} = {B3B8E3B7-956A-40E6-B240-15B69F9084AF}
+		{2B901AF9-0038-41BB-8B7C-F64C8A1C3636} = {B3B8E3B7-956A-40E6-B240-15B69F9084AF}
+		{8B93E72D-3AE9-4148-AF10-3A37056F98B7} = {C9B08787-9B2A-4AC7-A491-398A0D3EFF5E}
+		{3F12CB3C-BE87-40B9-994E-A86964993936} = {9E23AA9D-553E-41DA-9ED1-BA322701502C}
+		{801ACB48-9B5A-40AC-9C99-7B98EADC4271} = {2B901AF9-0038-41BB-8B7C-F64C8A1C3636}
+		{79D929A7-FEC8-4F6D-9F9E-E89FB14C945B} = {2B901AF9-0038-41BB-8B7C-F64C8A1C3636}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {53FCD0FD-E0E3-4972-B933-944241A7EA24}

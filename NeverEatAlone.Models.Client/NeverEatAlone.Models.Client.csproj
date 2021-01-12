@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NeverEatAlone.Models.Common.Interfaces\NeverEatAlone.Models.Common.Interfaces.csproj" />
+    <ProjectReference Include="..\NeverEatAlone.Models.Global.Entities\NeverEatAlone.Models.Global.Entities.csproj" />
+    <ProjectReference Include="..\NeverEatAlone.Models.Global.Repositories\NeverEatAlone.Models.Global.Repositories.csproj" />
+  </ItemGroup>
+
+</Project>

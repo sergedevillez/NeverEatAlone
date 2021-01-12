@@ -3,7 +3,7 @@
 	@Password VARCHAR(20)
 AS
 BEGIN
-	SELECT [UserId], [LastName], [FirstName], [Email]
+	SELECT [UserId], [LastName], [FirstName], [Email], [IdPhoto]
 	FROM [User] 
-	WHERE [Email] = @Email and [Password] = HASHBYTES('SHA2_512', dbo.GetPreSalt() + @Password + dbo.GetPostSalt()) AND [IsActive] = 0;
+	WHERE [Email] = @Email and [Password] = HASHBYTES('SHA2_512', dbo.GetPreSalt() + @Password + dbo.GetPostSalt()) AND [IsActive] = 1;
 END

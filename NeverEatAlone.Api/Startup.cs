@@ -1,3 +1,8 @@
+#region Alias
+using GlobalUser = NeverEatAlone.Models.Global.Entities.User;
+using GlobalAuthRepository = NeverEatAlone.Models.Global.Repositories.AuthRepository;
+#endregion
+
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -7,10 +12,16 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using NeverEatAlone.Api.Infrastructure.Security;
+using NeverEatAlone.Models.Common.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
+using Tools.Connection;
+using NeverEatAlone.Models.Client.Entities;
+using NeverEatAlone.Models.Client.Repositories;
 
 namespace NeverEatAlone.Api
 {
@@ -28,10 +39,16 @@ namespace NeverEatAlone.Api
         {
 
             services.AddControllers();
+            services.AddCors(c => c.AddPolicy("default", options => options.AllowAnyOrigin()));
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "NeverEatAlone.Api", Version = "v1" });
             });
+            //Ces intterfaces permettent d'accéder au méthodes sans devoir tout charger.
+            services.AddSingleton<ITokenService, TokenService>();
+            services.AddSingleton<IConnection, Connection>(Span => new Connection(SqlClientFactory.Instance, @"Data Source=DESKTOP-PJ4VH9N;Initial Catalog=NeverEatAlone.Database;Integrated Security=True;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"));
+            services.AddSingleton<IAuthRepository<GlobalUser>, GlobalAuthRepository>();
+            services.AddSingleton<IAuthRepository<User>, AuthRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

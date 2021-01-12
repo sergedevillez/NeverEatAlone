@@ -2,8 +2,8 @@
 (
 	@HobbyId int
 )
-RETURNS INT
 AS
 BEGIN
-	RETURN @param1 + @param2
+	Select HobbyId, HobbyName From Hobby
+	Where HobbyId = @HobbyId
 END
