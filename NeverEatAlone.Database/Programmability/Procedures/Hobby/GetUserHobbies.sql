@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [dbo].[GetUsersHobbies]
+﻿CREATE PROCEDURE [dbo].[GetUserHobbies]
 	@UserId int
 AS
 Begin

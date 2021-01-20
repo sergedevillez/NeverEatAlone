@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [dbo].[GetMeetingsParticipants]
+﻿CREATE PROCEDURE [dbo].[GetMeetingParticipants]
 	@MeetingId int
 AS
 Begin

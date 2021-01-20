@@ -10,6 +10,6 @@ namespace NeverEatAlone.Models.Common.Interfaces
         void Update(TEntity entity);
         TEntity Login(string email, string password);
         void FreezeUnfreeze(int userId);
-
+        TEntity GetById(int id);
     }
 }

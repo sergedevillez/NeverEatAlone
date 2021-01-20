@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [dbo].[GetUsersFoods]
+﻿CREATE PROCEDURE [dbo].[GetUserFoods]
 	@UserId int
 AS
 Begin
