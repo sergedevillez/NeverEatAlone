@@ -60,10 +60,10 @@
     <Folder Include="Procedures" />
     <Folder Include="Procedures\Food" />
     <Folder Include="Procedures\Hobby" />
-    <Folder Include="Procedures\Meeting" />
     <Folder Include="Procedures\User" />
     <Folder Include="Scripts" />
     <Folder Include="Tables" />
+    <Folder Include="Procedures\Meeting" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Functions\GetPostSalt.sql" />
@@ -83,6 +83,13 @@
     <Build Include="Tables\UserFood.sql" />
     <Build Include="Tables\UserHobby.sql" />
     <Build Include="Tables\UserMeeting.sql" />
+    <Build Include="Procedures\User\FreezeUnfreezeUser.sql" />
+    <Build Include="Procedures\User\AddHobbyToUser.sql" />
+    <Build Include="Procedures\Hobby\GetUsersHobbies.sql" />
+    <Build Include="Procedures\Meeting\CreateMeeting.sql" />
+    <Build Include="Procedures\Meeting\GetMeeting.sql" />
+    <Build Include="Procedures\Hobby\DeleteHobby.sql" />
+    <Build Include="Procedures\Meeting\GetUsersMeeting.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Scripts\Script.PostDeployment.sql" />
