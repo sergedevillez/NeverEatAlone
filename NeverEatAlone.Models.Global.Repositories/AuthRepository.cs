@@ -26,6 +26,11 @@ namespace NeverEatAlone.Models.Global.Repositories
             _connection.ExecuteNonQuery(command);
         }
 
+        public User GetById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public User Login(string email, string password)
         {
             Command command = new Command("CheckUser", true);

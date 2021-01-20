@@ -26,7 +26,7 @@ namespace NeverEatAlone.Models.Global.Repositories
             _connection.ExecuteNonQuery(command);
         }
 
-        public Meeting getById(int id)
+        public Meeting GetById(int id)
         {
             Command command = new Command("GetMeeting", true);
             command.AddParameter("MeetingId", id);
@@ -35,7 +35,7 @@ namespace NeverEatAlone.Models.Global.Repositories
             return _connection.ExecuteReader(command, dataReader => dataReader.ToMeeting()).SingleOrDefault();
         }
 
-        public IEnumerable<Meeting> getAll()
+        public IEnumerable<Meeting> GetAll()
         {
             Command command = new Command("GetAllMeetings", true);
             return _connection.ExecuteReader(command, dataReader => dataReader.ToMeeting());
@@ -50,6 +50,35 @@ namespace NeverEatAlone.Models.Global.Repositories
             command.AddParameter("MeetingPlace", entity.MeetingPlace);
 
             _connection.ExecuteNonQuery(command);
+        }
+
+        public void AddUserToMeeting(int userId, int meetingId)
+        {
+            Command command = new Command("AddUserToMeeting", true);
+            command.AddParameter("UserId", userId);
+            command.AddParameter("MeetingId", meetingId);
+
+            _connection.ExecuteNonQuery(command);
+        }
+
+
+        //TODO: Check how to change the parameter entred in a methode while not leaving and empty method to implement the interface.
+        public void Create(Meeting entity, int userId)
+        {
+            Command command = new Command("CreateMeeting", true);
+            command.AddParameter("MeetingId", entity.MeetingId);
+            command.AddParameter("UserId", userId);
+            command.AddParameter("MeetingDateTime", entity.MeetingDateTime);
+            command.AddParameter("MeetingPlace", entity.MeetingPlace);
+
+            _connection.ExecuteNonQuery(command);
+        }
+
+
+        //See Above : Do Not use
+        public void Create(Meeting entity)
+        {
+            throw new NotImplementedException();
         }
     }
 }
