@@ -62,20 +62,25 @@ namespace NeverEatAlone.Models.Global.Repositories
         }
 
 
-        public void Create(Meeting entity, int userId)
+        //public void Create(Meeting entity, int userId)
+        //{
+        //    Command command = new Command("CreateMeeting", true);
+        //    command.AddParameter("MeetingId", entity.MeetingId);
+        //    command.AddParameter("MeetingDateTime", entity.MeetingDateTime);
+        //    command.AddParameter("MeetingPlace", entity.MeetingPlace);
+        //    command.AddParameter("UserId", userId);
+
+        //    _connection.ExecuteNonQuery(command);
+        //}
+
+        public void Create(Meeting entity)
         {
             Command command = new Command("CreateMeeting", true);
             command.AddParameter("MeetingId", entity.MeetingId);
             command.AddParameter("MeetingDateTime", entity.MeetingDateTime);
             command.AddParameter("MeetingPlace", entity.MeetingPlace);
-            command.AddParameter("UserId", userId);
 
             _connection.ExecuteNonQuery(command);
-        }
-
-        public void Create(Meeting entity)
-        {
-            throw new NotImplementedException();
         }
 
         public IEnumerable<Meeting> GetUserMeetings(int id)

@@ -50,12 +50,51 @@ namespace NeverEatAlone.Models.Client.Mappers
         #endregion
 
         #region FoodType
-        public static GlobalFoodType ToGlobal(this GlobalFoodType entity)
+        public static GlobalFoodType ToGlobal(this FoodType entity)
         {
             return new GlobalFoodType()
             {
+                FoodTypeId = entity.FoodTypeId,
+                FoodTypeName = entity.FoodTypeName
+            };
+        }
 
-            }
+        public static FoodType ToClient(this GlobalFoodType entity)
+        {
+            return new FoodType(entity.FoodTypeId, entity.FoodTypeName);
+        }
+        #endregion
+
+        #region Meeting
+        public static GlobalMeeting ToGlobal(this Meeting entity)
+        {
+            return new GlobalMeeting()
+            {
+                MeetingId = entity.MeetingId,
+                MeetingDateTime = entity.MeetingDateTime,
+                MeetingPlace = entity.MeetingPlace
+            };
+        }
+
+        public static Meeting ToClient(this GlobalMeeting entity)
+        {
+            return new Meeting(entity.MeetingId, entity.MeetingDateTime, entity.MeetingPlace);
+        }
+        #endregion
+
+        #region Hobby
+        public static GlobalHobby ToGlobal(this Hobby entity)
+        {
+            return new GlobalHobby()
+            {
+                HobbyId = entity.HobbyId,
+                HobbyName = entity.HobbyName
+            };
+        }
+
+        public static Hobby ToClient(this GlobalHobby entity)
+        {
+            return new Hobby(entity.HobbyId, entity.HobbyName);
         }
         #endregion
     }
