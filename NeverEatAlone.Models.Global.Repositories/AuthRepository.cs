@@ -28,7 +28,10 @@ namespace NeverEatAlone.Models.Global.Repositories
 
         public User GetById(int id)
         {
-            throw new NotImplementedException();
+            Command command = new Command("GetUserById", true);
+            command.AddParameter("UserId", id);
+
+            return _connection.ExecuteReader(command, dataReader => dataReader.ToUser()).SingleOrDefault();
         }
 
         public User Login(string email, string password)

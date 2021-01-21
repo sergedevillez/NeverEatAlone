@@ -10,6 +10,6 @@ namespace NeverEatAlone.Models.Common.Interfaces
 
         void AddHobbyToUser(int userId, int HobbyId);
         void DeleteHobbyFromUser(int userId, int HobbyId);
-        IEnumerable GetUserHobbies(int userId);
+        IEnumerable<TEntity> GetUserHobbies(int userId);
     }
 }

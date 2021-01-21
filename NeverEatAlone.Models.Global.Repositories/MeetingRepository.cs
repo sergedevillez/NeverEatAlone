@@ -62,23 +62,28 @@ namespace NeverEatAlone.Models.Global.Repositories
         }
 
 
-        //TODO: Check how to change the parameter entred in a methode while not leaving and empty method to implement the interface.
         public void Create(Meeting entity, int userId)
         {
             Command command = new Command("CreateMeeting", true);
             command.AddParameter("MeetingId", entity.MeetingId);
-            command.AddParameter("UserId", userId);
             command.AddParameter("MeetingDateTime", entity.MeetingDateTime);
             command.AddParameter("MeetingPlace", entity.MeetingPlace);
+            command.AddParameter("UserId", userId);
 
             _connection.ExecuteNonQuery(command);
         }
 
-
-        //See Above : Do Not use
         public void Create(Meeting entity)
         {
             throw new NotImplementedException();
+        }
+
+        public IEnumerable<Meeting> GetUserMeetings(int id)
+        {
+            Command command = new Command("GetUserMeetings", true);
+            command.AddParameter("UserId", id);
+
+            return _connection.ExecuteReader(command, dataReader => dataReader.ToMeeting());
         }
     }
 }
