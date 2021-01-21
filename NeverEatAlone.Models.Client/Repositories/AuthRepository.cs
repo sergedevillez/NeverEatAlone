@@ -17,11 +17,14 @@ namespace NeverEatAlone.Models.Client.Repositories
             _repository = repository;
         }
 
-
-
         public void FreezeUnfreeze(int userId)
         {
             _repository.FreezeUnfreeze(userId);
+        }
+
+        public User GetById(int id)
+        {
+            return _repository.GetById(id)?.ToClient();
         }
 
         public User Login(string email, string password)

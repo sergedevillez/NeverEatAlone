@@ -1,10 +1,11 @@
 ﻿using NeverEatAlone.Models.Client.Entities;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 #region Alias
 using GlobalUser = NeverEatAlone.Models.Global.Entities.User;
+using GlobalFood = NeverEatAlone.Models.Global.Entities.Food;
+using GlobalFoodType = NeverEatAlone.Models.Global.Entities.FoodType;
+using GlobalMeeting = NeverEatAlone.Models.Global.Entities.Meeting;
+using GlobalHobby = NeverEatAlone.Models.Global.Entities.Hobby;
 #endregion
 
 namespace NeverEatAlone.Models.Client.Mappers
@@ -29,6 +30,32 @@ namespace NeverEatAlone.Models.Client.Mappers
         {
             //No password
             return new User(entity.UserId, entity.FirstName, entity.LastName, entity.Email, entity.IdPhoto);
+        }
+        #endregion
+
+        #region Food
+        public static GlobalFood ToGlobal(this Food entity)
+        {
+            return new GlobalFood()
+            {
+                FoodId = entity.FoodId,
+                FoodName = entity.FoodName
+            };
+        }
+
+        public static Food ToClient(this GlobalFood entity)
+        {
+            return new Food(entity.FoodId, entity.FoodName);
+        }
+        #endregion
+
+        #region FoodType
+        public static GlobalFoodType ToGlobal(this GlobalFoodType entity)
+        {
+            return new GlobalFoodType()
+            {
+
+            }
         }
         #endregion
     }
