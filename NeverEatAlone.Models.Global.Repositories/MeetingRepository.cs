@@ -22,7 +22,7 @@ namespace NeverEatAlone.Models.Global.Repositories
             Command command = new Command("Delete", true);
             command.AddParameter("MeetingId", id);
 
-            //TODO: Add the userId to check if user has the correct role link to this meeting allowing him to delete it.
+            // TODO : Add the userId to check if user has the correct role link to this meeting allowing him to delete it.
             _connection.ExecuteNonQuery(command);
         }
 
@@ -31,7 +31,7 @@ namespace NeverEatAlone.Models.Global.Repositories
             Command command = new Command("GetMeeting", true);
             command.AddParameter("MeetingId", id);
 
-            //TODO: check if ExecuteScalar isn't better.
+            // TODO : check if ExecuteScalar isn't better.
             return _connection.ExecuteReader(command, dataReader => dataReader.ToMeeting()).SingleOrDefault();
         }
 
@@ -61,7 +61,7 @@ namespace NeverEatAlone.Models.Global.Repositories
             _connection.ExecuteNonQuery(command);
         }
 
-
+        // TODO: 
         //public void Create(Meeting entity, int userId)
         //{
         //    Command command = new Command("CreateMeeting", true);

@@ -3,6 +3,7 @@ using NeverEatAlone.Models.Client.Mappers;
 using NeverEatAlone.Models.Common.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using GlobalHobby = NeverEatAlone.Models.Global.Entities.Hobby;
 
@@ -23,32 +24,32 @@ namespace NeverEatAlone.Models.Client.Repositories
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            _repository.Delete(id);
         }
 
-        public void DeleteHobbyFromUser(int userId, int HobbyId)
+        public void DeleteHobbyFromUser(int userId, int hobbyId)
         {
-            throw new NotImplementedException();
+            _repository.DeleteHobbyFromUser(userId, hobbyId);
         }
 
         public IEnumerable<Hobby> GetAll()
         {
-            throw new NotImplementedException();
+            return _repository.GetAll().Select(h => h.ToClient());
         }
 
         public Hobby GetById(int id)
         {
-            throw new NotImplementedException();
+            return _repository.GetById(id)?.ToClient();
         }
 
         public IEnumerable<Hobby> GetUserHobbies(int userId)
         {
-            throw new NotImplementedException();
+            return _repository.GetUserHobbies(userId).Select(h => h.ToClient());
         }
 
         public void Update(Hobby entity)
         {
-            throw new NotImplementedException();
+            _repository.Update(entity.ToGlobal());
         }
     }
 }

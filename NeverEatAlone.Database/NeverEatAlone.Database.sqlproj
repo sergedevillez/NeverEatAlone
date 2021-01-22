@@ -56,24 +56,19 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
-    <Folder Include="Functions" />
-    <Folder Include="Procedures" />
-    <Folder Include="Procedures\Food" />
-    <Folder Include="Procedures\Hobby" />
-    <Folder Include="Procedures\User" />
     <Folder Include="Scripts" />
     <Folder Include="Tables" />
-    <Folder Include="Procedures\Meeting" />
+    <Folder Include="Programmability" />
+    <Folder Include="Programmability\Functions" />
+    <Folder Include="Programmability\Procedures" />
+    <Folder Include="Programmability\Procedures\Food" />
+    <Folder Include="Programmability\Procedures\FoodType" />
+    <Folder Include="Programmability\Procedures\Hobby" />
+    <Folder Include="Programmability\Procedures\Meeting" />
+    <Folder Include="Programmability\Procedures\User" />
+    <Folder Include="Programmability\Types" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="Functions\GetPostSalt.sql" />
-    <Build Include="Functions\GetPreSalt.sql" />
-    <Build Include="Procedures\Hobby\CreateHobby.sql" />
-    <Build Include="Procedures\Hobby\GetHobbyById.sql" />
-    <Build Include="Procedures\Hobby\UpdateHobby.sql" />
-    <Build Include="Procedures\User\CheckUser.sql" />
-    <Build Include="Procedures\User\RegisterUser.sql" />
-    <Build Include="Procedures\User\UpdateUser.sql" />
     <Build Include="Tables\Food.sql" />
     <Build Include="Tables\FoodFoodType.sql" />
     <Build Include="Tables\FoodType.sql" />
@@ -83,13 +78,43 @@
     <Build Include="Tables\UserFood.sql" />
     <Build Include="Tables\UserHobby.sql" />
     <Build Include="Tables\UserMeeting.sql" />
-    <Build Include="Procedures\User\FreezeUnfreezeUser.sql" />
-    <Build Include="Procedures\User\AddHobbyToUser.sql" />
-    <Build Include="Procedures\Hobby\GetUsersHobbies.sql" />
-    <Build Include="Procedures\Meeting\CreateMeeting.sql" />
-    <Build Include="Procedures\Meeting\GetMeeting.sql" />
-    <Build Include="Procedures\Hobby\DeleteHobby.sql" />
-    <Build Include="Procedures\Meeting\GetUsersMeeting.sql" />
+    <Build Include="Programmability\Functions\GetPostSalt.sql" />
+    <Build Include="Programmability\Functions\GetPreSalt.sql" />
+    <Build Include="Programmability\Procedures\Food\AddFoodToFoodType.sql" />
+    <Build Include="Programmability\Procedures\Food\AddFoodToUser.sql" />
+    <Build Include="Programmability\Procedures\Food\CreateFood.sql" />
+    <Build Include="Programmability\Procedures\Food\DeleteFood.sql" />
+    <Build Include="Programmability\Procedures\Food\GetAllFoods.sql" />
+    <Build Include="Programmability\Procedures\Food\GetFoodById.sql" />
+    <Build Include="Programmability\Procedures\Food\GetUserFoods.sql" />
+    <Build Include="Programmability\Procedures\Food\UpdateFood.sql" />
+    <Build Include="Programmability\Procedures\FoodType\CreateFoodType.sql" />
+    <Build Include="Programmability\Procedures\FoodType\DeleteFoodType.sql" />
+    <Build Include="Programmability\Procedures\FoodType\GetAllFoodTypes.sql" />
+    <Build Include="Programmability\Procedures\FoodType\GetFoodTypeById.sql" />
+    <Build Include="Programmability\Procedures\FoodType\UpdateFoodType.sql" />
+    <Build Include="Programmability\Procedures\Hobby\AddHobbyToUser.sql" />
+    <Build Include="Programmability\Procedures\Hobby\CreateHobby.sql" />
+    <Build Include="Programmability\Procedures\Hobby\DeleteHobby.sql" />
+    <Build Include="Programmability\Procedures\Hobby\DeleteHobbyFromUser.sql" />
+    <Build Include="Programmability\Procedures\Hobby\GetAllHobbies.sql" />
+    <Build Include="Programmability\Procedures\Hobby\GetHobbyById.sql" />
+    <Build Include="Programmability\Procedures\Hobby\GetUserHobbies.sql" />
+    <Build Include="Programmability\Procedures\Hobby\UpdateHobby.sql" />
+    <Build Include="Programmability\Procedures\Meeting\AddUserToMeeting.sql" />
+    <Build Include="Programmability\Procedures\Meeting\CreateMeeting.sql" />
+    <Build Include="Programmability\Procedures\Meeting\DeleteMeeting.sql" />
+    <Build Include="Programmability\Procedures\Meeting\GetAllMeetings.sql" />
+    <Build Include="Programmability\Procedures\Meeting\GetMeetingById.sql" />
+    <Build Include="Programmability\Procedures\Meeting\GetMeetingParticipants.sql" />
+    <Build Include="Programmability\Procedures\Meeting\GetUserMeetings.sql" />
+    <Build Include="Programmability\Procedures\Meeting\UpdateMeeting.sql" />
+    <Build Include="Programmability\Procedures\User\CheckUser.sql" />
+    <Build Include="Programmability\Procedures\User\FreezeUnfreezeUser.sql" />
+    <Build Include="Programmability\Procedures\User\GetAllUsers.sql" />
+    <Build Include="Programmability\Procedures\User\GetUserById.sql" />
+    <Build Include="Programmability\Procedures\User\RegisterUser.sql" />
+    <Build Include="Programmability\Procedures\User\UpdateUser.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Scripts\Script.PostDeployment.sql" />

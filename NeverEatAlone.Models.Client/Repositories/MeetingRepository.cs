@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using GlobalMeeting = NeverEatAlone.Models.Global.Entities.Meeting;
+using System.Linq;
 
 namespace NeverEatAlone.Models.Client.Repositories
 {
@@ -24,13 +25,12 @@ namespace NeverEatAlone.Models.Client.Repositories
 
         public void Create(Meeting entity, int userId)
         {
-            //TODO Modify the whole branch to allow automatic add
-            //_repository.Create(entity, userId);
+            _repository.Create(entity.ToGlobal(), userId);
         }
 
         public void Create(Meeting entity)
         {
-            //_repository.Create(entity.ToGlobal());
+            _repository.Create(entity.ToGlobal());
         }
 
         public void Delete(int id)
@@ -38,10 +38,10 @@ namespace NeverEatAlone.Models.Client.Repositories
             _repository.Delete(id);
         }
 
-        //public IEnumerable<Meeting> GetAll()
-        //{
-        //    return _repository.GetAll().ToClient();
-        //}
+        public IEnumerable<Meeting> GetAll()
+        {
+            return _repository.GetAll().Select(c => c.ToClient());
+        }
 
         public Meeting GetById(int id)
         {
@@ -50,12 +50,12 @@ namespace NeverEatAlone.Models.Client.Repositories
 
         public IEnumerable<Meeting> GetUserMeetings(int userId)
         {
-            return _repository.GetById(userId);
+            return _repository.GetUserMeetings(userId).Select(m => m.ToClient());
         }
 
         public void Update(Meeting entity)
         {
-            throw new NotImplementedException();
+            _repository.Update(entity.ToGlobal());
         }
     }
 }

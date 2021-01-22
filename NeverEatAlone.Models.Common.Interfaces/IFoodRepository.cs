@@ -7,9 +7,9 @@ namespace NeverEatAlone.Models.Common.Interfaces
 {
     public interface IFoodRepository<TEntity> : ICrudRepository<TEntity>
     {
-        void AddFoodToFoodType(int FoodId, int FoodTypeId);
+        void AddFoodToFoodType(int foodId, int foodTypeId);
         IEnumerable<TEntity> GetUserFoods(int id);
-        void AddFoodToUser(int userId, int FoodId);
+        void AddFoodToUser(int userId, int foodId);
 
     }
 }
