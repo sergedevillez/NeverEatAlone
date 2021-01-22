@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using NeverEatAlone.Models.Client.Entities;
+using NeverEatAlone.Models.Common.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,5 +13,13 @@ namespace NeverEatAlone.Api.Controllers
     [ApiController]
     public class FoodController : ControllerBase
     {
+        private readonly IFoodRepository<Food> _repository;
+
+        public FoodController(IFoodRepository<Food> repository)
+        {
+            _repository = repository;
+        }
+
+
     }
 }
