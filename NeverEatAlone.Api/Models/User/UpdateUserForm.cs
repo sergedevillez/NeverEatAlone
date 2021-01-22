@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NeverEatAlone.Api.Models
 {
-    public class UpdateForm
+    public class UpdateUserForm
     {
         [Required]
         [StringLength(50, MinimumLength = 2)]

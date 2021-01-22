@@ -65,7 +65,7 @@ namespace NeverEatAlone.Api.Controllers
         
         //Post api/Auth/Update
         [HttpPost("Update")]
-        public IActionResult Update([FromBody] UpdateForm form)
+        public IActionResult Update([FromBody] UpdateUserForm form)
         {
             if (ModelState.IsValid)
             {
