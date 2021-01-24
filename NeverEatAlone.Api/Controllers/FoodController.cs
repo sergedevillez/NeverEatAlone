@@ -20,6 +20,61 @@ namespace NeverEatAlone.Api.Controllers
             _repository = repository;
         }
 
+        [HttpPost("Create")]
+        public IActionResult Create([FromBody] Food entity)
+        {
+            _repository.Create(entity);
+            return Ok();
+        }
 
+        [HttpGet("Read")]
+        public IActionResult GetById([FromBody] int id)
+        {
+            return Ok(_repository.GetById(id));
+        }
+
+        [HttpPost("Update")]
+        public IActionResult Update([FromBody] Food entity)
+        {
+            _repository.Update(entity);
+
+            return Ok();
+        }
+
+        [HttpPost("Delete")]
+        public IActionResult Delete([FromBody] int id)
+        {
+            _repository.Delete(id);
+
+            return Ok();
+        }
+
+        [HttpGet("GetAll")]
+        public IActionResult GetAll()
+        {
+            return Ok(_repository.GetAll());
+        }
+
+        [HttpPost("AddFoodToFoodType")]
+        public IActionResult AddFoodToFoodType([FromBody]int foodId, int foodTypeId)
+        {
+            _repository.AddFoodToFoodType(foodId, foodTypeId);
+
+            return Ok();
+        }
+
+        [HttpGet("GeUserFoods")]
+        public IActionResult GetUserFoods([FromBody] int userId)
+        {
+            return Ok(_repository.GetUserFoods(userId));
+        }
+
+        [HttpPost("AddFoodToUser")]
+        public IActionResult AddFoodToUser([FromBody] ,int userId, int foodId)
+        {
+            _repository.AddFoodToUser(userId, foodId);
+
+            return Ok();
+        }
     }
 }
