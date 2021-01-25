@@ -92,3 +92,31 @@ Exec [dbo].[AddFoodToFoodType]
 	@FoodTypeId = 1,
 	@FoodId = 9
 GO
+
+Exec [dbo].[CreateHobby]
+	@HobbyName = 'Waterpolo'
+Go
+
+Exec [dbo].[CreateHobby]
+	@HobbyName = 'Foot'
+Go
+
+Exec [dbo].[CreateHobby]
+	@HobbyName = 'Cooking'
+Go
+
+
+Exec [dbo].AddHobbyToUser
+	@UserId = 1,
+	@HobbyId = 1
+Go
+
+Exec [dbo].AddHobbyToUser
+	@UserId = 1,
+	@HobbyId = 3
+Go
+
+Exec [dbo].AddHobbyToUser
+	@UserId = 2,
+	@HobbyId = 2
+Go

@@ -26,8 +26,8 @@ namespace NeverEatAlone.Api.Controllers
             return Ok();
         }
 
-        [HttpGet("Read")]
-        public IActionResult GetById([FromBody] int id)
+        [HttpGet("Get/{id}")]
+        public IActionResult GetById(int id)
         {
             return Ok(_repository.GetById(id));
         }
@@ -54,8 +54,8 @@ namespace NeverEatAlone.Api.Controllers
             return Ok(_repository.GetAll());
         }
 
-        [HttpGet("GetUserHobbies")]
-        public IActionResult GetUserHobbies([FromBody] int userId)
+        [HttpGet("GetUserHobbies/{userId}")]
+        public IActionResult GetUserHobbies(int userId)
         {
             return Ok(_repository.GetUserHobbies(userId));
         }

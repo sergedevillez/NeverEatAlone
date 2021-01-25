@@ -26,8 +26,8 @@ namespace NeverEatAlone.Api.Controllers
             return Ok();
         }
 
-        [HttpGet("Read")]
-        public IActionResult GetById([FromBody] int id)
+        [HttpGet("Get/{id}")]
+        public IActionResult GetById(int id)
         {
             return Ok(_repository.GetById(id));
         }
