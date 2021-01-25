@@ -12,9 +12,9 @@ namespace NeverEatAlone.Models.Global.Repositories
     public class FoodTypeRepository : IFoodTypeRepository<FoodType>
     {
 
-        private readonly Connection _connection;
+        private readonly IConnection _connection;
 
-        public FoodTypeRepository(Connection connection)
+        public FoodTypeRepository(IConnection connection)
         {
             _connection = connection;
         }

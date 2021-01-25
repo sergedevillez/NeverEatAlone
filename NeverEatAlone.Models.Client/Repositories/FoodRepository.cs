@@ -20,7 +20,7 @@ namespace NeverEatAlone.Models.Client.Repositories
 
         public void AddFoodToFoodType(int foodId, int foodTypeId)
         {
-            _repository.AddFoodToFoodType(foodId, foodTypeId)
+            _repository.AddFoodToFoodType(foodId, foodTypeId);
         }
 
         public void AddFoodToUser(int userId, int foodId)

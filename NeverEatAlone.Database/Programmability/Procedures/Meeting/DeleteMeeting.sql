@@ -5,5 +5,5 @@ AS
 Begin
 	DELETE m FROM [Meeting] m
 	Left join User_Meeting um ON m.MeetingId = um.MeetingId
-	WHERE um.[Role] = 1 and m.MeetingId = @MeetingId
+	WHERE m.MeetingId = @MeetingId
 End

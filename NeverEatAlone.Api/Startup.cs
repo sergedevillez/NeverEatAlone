@@ -1,6 +1,15 @@
 #region Alias
 using GlobalUser = NeverEatAlone.Models.Global.Entities.User;
 using GlobalAuthRepository = NeverEatAlone.Models.Global.Repositories.AuthRepository;
+using GlobalMeeting = NeverEatAlone.Models.Global.Entities.Meeting;
+using GlobalMeetingRepository = NeverEatAlone.Models.Global.Repositories.MeetingRepository;
+using GlobalFood = NeverEatAlone.Models.Global.Entities.Food;
+using GlobalFoodRepository = NeverEatAlone.Models.Global.Repositories.FoodRepository;
+using GlobalFoodType = NeverEatAlone.Models.Global.Entities.FoodType;
+using GlobalFoodTypeRepository = NeverEatAlone.Models.Global.Repositories.FoodTypeRepository;
+using GlobalHobby = NeverEatAlone.Models.Global.Entities.Hobby;
+using GlobalHobbyRepository = NeverEatAlone.Models.Global.Repositories.HobbyRepository;
+
 #endregion
 
 using Microsoft.AspNetCore.Builder;
@@ -49,6 +58,19 @@ namespace NeverEatAlone.Api
             services.AddSingleton<IConnection, Connection>(Span => new Connection(SqlClientFactory.Instance, @"Data Source=DESKTOP-PJ4VH9N;Initial Catalog=NeverEatAlone.Database;Integrated Security=True;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"));
             services.AddSingleton<IAuthRepository<GlobalUser>, GlobalAuthRepository>();
             services.AddSingleton<IAuthRepository<User>, AuthRepository>();
+
+            services.AddSingleton<IMeetingRepository<GlobalMeeting>, GlobalMeetingRepository>();
+            services.AddSingleton<IMeetingRepository<Meeting>, MeetingRepository>();
+
+            services.AddSingleton<IHobbyRepository<GlobalHobby>, GlobalHobbyRepository>();
+            services.AddSingleton<IHobbyRepository<Hobby>, HobbyRepository>();
+
+            services.AddSingleton<IFoodRepository<GlobalFood>, GlobalFoodRepository>();
+            services.AddSingleton<IFoodRepository<Food>, FoodRepository>();
+
+            services.AddSingleton<IFoodTypeRepository<GlobalFoodType>, GlobalFoodTypeRepository>();
+            services.AddSingleton<IFoodTypeRepository<FoodType>, FoodTypeRepository>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

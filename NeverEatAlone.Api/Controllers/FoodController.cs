@@ -70,7 +70,7 @@ namespace NeverEatAlone.Api.Controllers
         }
 
         [HttpPost("AddFoodToUser")]
-        public IActionResult AddFoodToUser([FromBody] ,int userId, int foodId)
+        public IActionResult AddFoodToUser([FromBody] int userId, int foodId)
         {
             _repository.AddFoodToUser(userId, foodId);
 

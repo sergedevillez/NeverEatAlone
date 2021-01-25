@@ -54,6 +54,26 @@ namespace NeverEatAlone.Api.Controllers
             return Ok(_repository.GetAll());
         }
 
+        [HttpGet("GetUserHobbies")]
+        public IActionResult GetUserHobbies([FromBody] int userId)
+        {
+            return Ok(_repository.GetUserHobbies(userId));
+        }
 
+        [HttpPost("AddHobbyToUser")]
+        public IActionResult AddHobbyToUser([FromBody] int userdId, int hobbyId)
+        {
+            _repository.AddHobbyToUser(userdId, hobbyId);
+
+            return Ok();
+        }
+
+        [HttpPost("DeleteHobbyFromUser")]
+        public IActionResult DeleteHobbyFromUser([FromBody] int userId, int hobbyId)
+        {
+            _repository.DeleteHobbyFromUser(userId, hobbyId);
+
+            return Ok();
+        }
     }
 }

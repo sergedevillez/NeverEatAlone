@@ -31,9 +31,8 @@ GO
 
 Exec [dbo].[CreateMeeting]
 	@UserId = 1,
-	@MeetingDate = '2020-11-11',
-	@MeetingPlace ='La place des perdus',
-	@MeetingHour = '11:30:00'
+	@MeetingDateTime = '20201123 23:59:59.99',
+	@MeetingPlace ='La place des perdus'
 GO
 
 Exec [dbo].[AddUserToMeeting]

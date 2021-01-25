@@ -31,7 +31,6 @@ namespace NeverEatAlone.Models.Global.Repositories
             Command command = new Command("GetMeeting", true);
             command.AddParameter("MeetingId", id);
 
-            // TODO : check if ExecuteScalar isn't better.
             return _connection.ExecuteReader(command, dataReader => dataReader.ToMeeting()).SingleOrDefault();
         }
 
@@ -62,16 +61,16 @@ namespace NeverEatAlone.Models.Global.Repositories
         }
 
         // TODO: 
-        //public void Create(Meeting entity, int userId)
-        //{
-        //    Command command = new Command("CreateMeeting", true);
-        //    command.AddParameter("MeetingId", entity.MeetingId);
-        //    command.AddParameter("MeetingDateTime", entity.MeetingDateTime);
-        //    command.AddParameter("MeetingPlace", entity.MeetingPlace);
-        //    command.AddParameter("UserId", userId);
+        public void Create(Meeting entity, int userId)
+        {
+            Command command = new Command("CreateMeeting", true);
+            command.AddParameter("MeetingId", entity.MeetingId);
+            command.AddParameter("MeetingDateTime", entity.MeetingDateTime);
+            command.AddParameter("MeetingPlace", entity.MeetingPlace);
+            command.AddParameter("UserId", userId);
 
-        //    _connection.ExecuteNonQuery(command);
-        //}
+            _connection.ExecuteNonQuery(command);
+        }
 
         public void Create(Meeting entity)
         {
