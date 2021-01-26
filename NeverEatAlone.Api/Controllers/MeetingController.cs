@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using NeverEatAlone.Api.Infrastructure.Attributes;
+using NeverEatAlone.Api.Models.Meeting;
 using NeverEatAlone.Models.Client.Entities;
 using NeverEatAlone.Models.Common.Interfaces;
 using System;
@@ -22,10 +23,16 @@ namespace NeverEatAlone.Api.Controllers
         }
 
         [HttpPost("Create")]
-        public IActionResult Create([FromBody] Meeting entity)
+        public IActionResult Create([FromBody] CreateMeetingForm meetingForm)
         {
-            _repository.Create(entity);
-            return Ok();
+            if (ModelState.IsValid)
+            {
+                //Todo : Add userS in the creation of a meeting.
+                _repository.Create(new Meeting(meetingForm.MeetingDateTime, meetingForm.MeetingPlace));
+                return Ok();
+            }
+            return BadRequest();
+            
         }
 
         [HttpGet("Get/{id}")]

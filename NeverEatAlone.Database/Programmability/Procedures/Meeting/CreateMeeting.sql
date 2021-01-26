@@ -1,14 +1,14 @@
 ﻿CREATE PROCEDURE [dbo].[CreateMeeting]
-	@UserId int,
+	--@UserId int,
 	@MeetingDateTime DateTime,
 	@MeetingPlace Varchar(50)
 AS
 Begin
-	DECLARE @InsertedId INT
+	--DECLARE @InsertedId INT
 	Insert into Meeting (MeetingDateTime, MeetingPlace)
 	Values (@MeetingDateTime, @MeetingPlace)
-	SET @InsertedId = SCOPE_IDENTITY()
+	--SET @InsertedId = SCOPE_IDENTITY()
 
-	Insert into User_Meeting (UserId, MeetingId)
-	Values (@UserId, @InsertedId)
+	--Insert into User_Meeting (UserId, MeetingId)
+	--Values (@UserId, @InsertedId)
 End

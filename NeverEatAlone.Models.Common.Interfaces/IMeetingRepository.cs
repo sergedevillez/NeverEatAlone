@@ -8,6 +8,6 @@ namespace NeverEatAlone.Models.Common.Interfaces
     {
         void AddUserToMeeting(int userId, int meetingId);
         IEnumerable<TEntity> GetUserMeetings(int userId);
-        void Create(TEntity entity, int userId);
+        //void Create(TEntity entity, int userId);
     }
 }

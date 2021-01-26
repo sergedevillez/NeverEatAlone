@@ -23,10 +23,10 @@ namespace NeverEatAlone.Models.Client.Repositories
             _repository.AddUserToMeeting(userId, meetingId);
         }
 
-        public void Create(Meeting entity, int userId)
-        {
-            _repository.Create(entity.ToGlobal(), userId);
-        }
+        //public void Create(Meeting entity, int userId)
+        //{
+        //    _repository.Create(entity.ToGlobal(), userId);
+        //}
 
         public void Create(Meeting entity)
         {
