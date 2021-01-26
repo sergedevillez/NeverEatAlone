@@ -13,6 +13,11 @@ namespace NeverEatAlone.Models.Client.Repositories
     {
         private IHobbyRepository<GlobalHobby> _repository;
 
+        public HobbyRepository(IHobbyRepository<GlobalHobby> repository)
+        {
+            _repository = repository;
+        }
+
         public void AddHobbyToUser(int userId, int hobbyId)
         {
             _repository.AddHobbyToUser(userId, hobbyId);

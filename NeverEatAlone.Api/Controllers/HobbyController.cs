@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using NeverEatAlone.Api.Infrastructure.Attributes;
 using NeverEatAlone.Models.Client.Entities;
 using NeverEatAlone.Models.Common.Interfaces;
 using System;
@@ -10,6 +11,7 @@ namespace NeverEatAlone.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [AuthRequired]
     public class HobbyController : ControllerBase
     {
         private readonly IHobbyRepository<Hobby> _repository;

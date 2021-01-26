@@ -29,5 +29,6 @@ namespace NeverEatAlone.Models.Client.Entities
         {
             UserId = userId;
         }
+
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using NeverEatAlone.Api.Infrastructure.Attributes;
 using NeverEatAlone.Api.Infrastructure.Security;
 using NeverEatAlone.Api.Models;
 using NeverEatAlone.Models.Client.Entities;
@@ -62,26 +63,28 @@ namespace NeverEatAlone.Api.Controllers
             return BadRequest();
         }
 
-        
+        //Todo : allow update user WITH userId without adding public constructor with userId
         //Post api/Auth/Update
-        [HttpPost("Update")]
-        public IActionResult Update([FromBody] UpdateUserForm form)
-        {
-            if (ModelState.IsValid)
-            {
-                _repository.Update(new User(form.FirstName, form.LastName, form.Email, form.Password, form.IdPhoto));
-                return Ok();
-            }
+        //[AuthRequired]
+        //[HttpPost("Update")]
+        //public IActionResult Update([FromBody] UpdateUserForm form, [FromRoute] int id)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        _repository.Update(new User(id, form.FirstName, form.LastName, form.Email, form.Password, form.IdPhoto));
+        //        return Ok();
+        //    }
 
-            return BadRequest();
-        }
-        
+        //    return BadRequest();
+        //}
+
 
         //Post api/Auth/FreezeUnfreeze
-        [HttpPost("FreezeUnfreeze")]
-        public IActionResult FreezeUnfreeze([FromBody] int userId)
+        [AuthRequired]
+        [HttpPost("FreezeUnfreeze/{id}")]
+        public IActionResult FreezeUnfreeze(int id)
         {
-            _repository.FreezeUnfreeze(userId);
+            _repository.FreezeUnfreeze(id);
             return Ok();
         }
 
